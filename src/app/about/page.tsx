@@ -1,32 +1,34 @@
 "use client";
-import { Spotlight } from "@/components/ui/Spotlight";
-import Link from "next/link";
 import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export default function About() {
   return (
-    <div className="min-h-screen h-[40rem]-full w-full rounded-md flex md:items-center md:justify-center bg-gray/[0.96] antialiased bg-grid-white/[0.02] relative overflow-hidden">
-      <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
-        fill="white"
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-r from-blue-900 to-purple-400 text-white">
+      <Image
+        src="/images/dark-logo.png"
+        alt="Company Logo"
+        width={150}
+        height={150}
+        className="mb-8"
       />
+      <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-pulse">
+        Coming Soon
+      </h1>
+      <p className="text-xl md:text-2xl mb-8">
+        We are working hard to bring you something amazing!
+      </p>
 
-      <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
-        <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-          Spotlight <br /> is the new trend.
-        </h1>
-        <p className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto">
-          Spotlight effect is a great way to draw attention to a specific part
-          of the page. Here, we are drawing the attention towards the text
-          section of the page. I don&apos;t know why but I&apos;m running out of
-          copy.
-          <Link
-            href="/"
-            className="mt-4 font-normal text-base text-neutral-300 max-w-lg text-center mx-auto"
-          >
-            Go Home
-          </Link>
-        </p>
+      <div className="w-full max-w-md space-y-4">
+        <Input
+          type="email"
+          placeholder="Enter your email"
+          className="bg-white text-black"
+        />
+        <Button className="w-full bg-gradient-to-r from-yellow-400 to-purple-500 hover:from-blue-500 hover:to-purple-600 text-white font-bold py-2 px-4 rounded transition duration-300 ease-in-out transform hover:scale-105">
+          Notify Me
+        </Button>
       </div>
     </div>
   );
